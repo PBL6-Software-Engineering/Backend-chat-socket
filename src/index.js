@@ -6,7 +6,6 @@ let server = null;
 mongoose
   .connect("mongodb+srv://daitoan:daitoan@cluster0.ipllhkr.mongodb.net/chat-socket", {
     // useCreateIndex: true,
-    useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => {
