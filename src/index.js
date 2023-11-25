@@ -9,7 +9,7 @@ mongoose
   })
   .then(() => {
     console.log(`Connected to database`);
-    server = app.listen(3000, () => {
+    server = app.listen(3000, '0.0.0.0', () => {
       console.log(`Listening to port ${3000}`);
     });
 
