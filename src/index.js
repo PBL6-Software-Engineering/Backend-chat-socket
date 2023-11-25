@@ -15,14 +15,14 @@ mongoose
       console.log(`Listening to port ${process.env.PORT || 3000}`);
     });
 
-    // const io = require("socket.io");
-    // const socketio = io(server, {
-    //   cors: {
-    //     origin: ["http://localhost:4200", "*"],
-    //     methods: ["GET", "POST"],
-    //   },
-    // });
-    // require("./sockets")(socketio);
+    const io = require("socket.io");
+    const socketio = io(server, {
+      cors: {
+        origin: ["http://localhost:4200", "*"],
+        methods: ["GET", "POST"],
+      },
+    });
+    require("./sockets")(socketio);
   });
 
 process.on("SIGTERM", () => {
