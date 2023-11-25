@@ -14,7 +14,7 @@ mongoose
     const io = require("socket.io");
     const socketio = io(server, {
       cors: {
-        origin: ["http://localhost:4200", "*"],
+        origin: ["http://localhost:4200", "*", "https://pbl6-health-care.up.railway.app"],
         methods: ["GET", "POST"],
       },
     });
