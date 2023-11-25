@@ -4,10 +4,7 @@ require('dotenv').config()
 
 let server = null;
 mongoose
-  .connect("mongodb+srv://daitoan:daitoan@cluster0.ipllhkr.mongodb.net/chat-socket", {
-    // useCreateIndex: true,
-    useUnifiedTopology: true,
-  })
+  .connect("mongodb+srv://daitoan:daitoan@cluster0.ipllhkr.mongodb.net/chat-socket")
   .then(() => {
     console.log(`Connected to database`);
     server = app.listen(process.env.PORT || 3000, '0.0.0.0', () => {
