@@ -5,6 +5,7 @@ module.exports = {
   getAll: async (req, res) => {
     try {
       const {conversationId, skip, limit} = req.query;
+      console.log('conversationId', conversationId);
       if (!conversationId) {
         return res.status(400).json({
           message: "conversationId is required",

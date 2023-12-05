@@ -2,12 +2,15 @@ const express = require("express");
 const helmet = require("helmet");
 const compression = require("compression");
 const cors = require("cors");
+const morgan = require('morgan');
 const routes = require("./routes/v1");
 
 const app = express();
 
 // set security HTTP headers
 app.use(helmet());
+
+app.use(morgan('tiny'));
 
 // parse json request body
 app.use(express.json());
