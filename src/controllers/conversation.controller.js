@@ -5,10 +5,14 @@ module.exports = {
       const { type, id } = req.query;
       const query = {};
       if (type === 'admin') {
-        query['admin.id'] = id
+        query['admin.id'] = {
+          $in: [id, +id]
+        }
       }
       if (type === 'user') {
-        query['user.id'] = id
+        query['user.id'] = {
+          $in: [id, +id]
+        };
       }
 
       console.log('\n\n query::::', JSON.stringify(query));
@@ -17,7 +21,6 @@ module.exports = {
         .sort({ updatedAt: -1 })
         .lean();
 
-      console.log('conversations', conversations);
       return res.status(200).json({
         data: conversations,
       });
